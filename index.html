@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="en" ng-app="readit">
+    <html lang="en">
 		<head>
         
         <!-- Latest compiled and minified CSS -->
@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="readit.js"></script>
 		
 		</head>
-		<body>
+		<body ng-app="readit">
 			<div ng-controller="readCtrl" class="container">
 			<hr>
 				<div class="row panel panel-primary">
@@ -38,7 +38,15 @@
 			      <div class="panel-body">
 			      		<span ng-repeat="t in split track by $index">
 					
-						<span title="Meaning" ng-style="setBGColor($index)">{{ t }}</span>
+						<span ng-click="getMeaning(t)" ng-style="setBGColor($index)">{{ t }}</span>
+
+					</span> 
+			      </div>
+			    </div>
+			    <div class="row panel panel-success">
+			      <div class="panel-heading"> Meaning of clicked word </div>
+			      <div class="panel-body">
+			      		<h4>{{meaning}}</h4>
 
 					</span> 
 			      </div>

@@ -1,5 +1,5 @@
 var readit = angular.module('readit', []);
-readit.controller('readCtrl', ['$scope',
+readit.controller('readCtrl', ['$scope','$filter',
     function($scope) {
         
         
@@ -27,21 +27,20 @@ readit.controller('readCtrl', ['$scope',
                 return { color: "grey" }
             }
         }
-        $scope.getMeaning = function(index){
-             
-            /*if($scope.indices.indexOf(index)>-1){
+        $scope.meaning="";
+        $scope.getMeaning = function(word){
+            var index = $scope.split.indexOf(word);
+            if($scope.indices.indexOf(index)>-1){
                 //index of keyword in content so lets find value at that index
-                var word=$filter('filter')(items, { id: id2Search  }, true)[0];
-
                 angular.forEach($scope.keywords,function(value,ind){
                     if(word===value.name){
-                        return value.meaning;
+                        $scope.meaning = "Meaning of " + word + " is : "+value.meaning;
                     }
                 }) 
             }
             else {
-                return "asda";
-            }*/
+                $scope.meaning = word + " is not in our dictionary";
+            }
         }
         
         
