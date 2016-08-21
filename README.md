@@ -1,0 +1,1 @@
+# angular-text-highlighter
