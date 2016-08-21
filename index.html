@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="en" ng-app="readit">
+		<head>
+        
+        <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+		<script type="text/javascript" src="readit.js"></script>
+		
+		</head>
+		<body>
+			<div ng-controller="readCtrl" class="container">
+			<hr>
+				<div class="row panel panel-primary">
+				      <div class="panel-heading">Sample Data Used </div>
+				      <div class="panel-body">
+				      	<h2>Content :</h2>"Our QuickStart goal is to build and run a super simple Angular 2 application in TypeScript, and establish a development environment for the remaining documentation samples that also can be the foundation for real world applications." <br><br>
+				      	<h2>Keywords :</h2>
+				      	[
+					        {name:"QuickStart",meaning:"jaldi start karna"},<br>
+					        {name:"build",meaning:"kuch banana"},<br>
+					        {name:"application",meaning:"suvidha"},<br>
+					        {name:"remaining",meaning:"bacha hua"},<br>
+					    ];
+
+				      </div>
+				   
+				</div>
+				<div class="row panel panel-success">
+			      <div class="panel-heading">Our Post Data (Keywords will be highlighted in red automatically)</div>
+			      <div class="panel-body">
+			      		<span ng-repeat="t in split track by $index">
+					
+						<span title="Meaning" ng-style="setBGColor($index)">{{ t }}</span>
+
+					</span> 
+			      </div>
+			    </div>
+
+			    <div class="row panel panel-info">
+			      <div class="panel-heading">Index of different keywords in our content</div>
+			      <div class="panel-body"><h5 ng-repeat="index in indices track by $index">{{index}}</h5></div>
+			    </div>
+				
+			</div>
+		</body>
+	</html>
